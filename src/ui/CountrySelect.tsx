@@ -1,4 +1,5 @@
 import SelectField from "./SelectField";
+import { useTranslation } from "react-i18next";
 
 interface CountrySelectProps {
   country: string;
@@ -12,9 +13,11 @@ export default function CountrySelect({ country, setCountry }: CountrySelectProp
     { value: "uk", label: "UK", flag: "🇬🇧" },
   ];
 
+  const { t } = useTranslation();
+
   return (
     <SelectField
-      label="Business Unit Registration Country"
+      label={t("main.BusinessRegisUnit")}   // ✅ fixed key spelling
       value={country}
       onChange={setCountry}
       options={countries.map((c) => ({

@@ -1,4 +1,5 @@
 import SelectField from "./SelectField";
+import { useTranslation } from "react-i18next";
 
 interface OwnershipSelectProps {
   ownership: string;
@@ -12,10 +13,11 @@ export default function OwnershipSelect({ ownership, setOwnership }: OwnershipSe
     { value: "private_ltd", label: "Private Limited" },
     { value: "public_ltd", label: "Public Limited" },
   ];
+    const { t } = useTranslation();
 
   return (
     <SelectField
-      label="Business Unit Ownership Mode"
+      label={t("main.BusinessOwnershipUnit")}
       value={ownership}
       onChange={setOwnership}
       options={ownershipOptions}

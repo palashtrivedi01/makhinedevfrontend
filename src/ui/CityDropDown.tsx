@@ -1,9 +1,12 @@
 import { useState } from "react";
 import { ChevronDown } from "lucide-react";
+import { useTransition } from "react";
+import { useTranslation } from "react-i18next";
 
 export default function CityDropdown() {
   const [open, setOpen] = useState(false);
   const cities = ["Delhi", "Mumbai", "Bangalore", "Chennai", "Kolkata"];
+  const {t} = useTranslation();
 
   return (
     <div className="relative inline-block">
@@ -11,7 +14,7 @@ export default function CityDropdown() {
         onClick={() => setOpen(!open)}
         className="flex items-center gap-1 border border-yellow-400 rounded-md px-2 py-0.5 text-gray-800 text-xs"
       >
-        More Cities
+        {t("Buttons.MoreCities")}
         <ChevronDown className={`w-3 h-3 transition-transform ${open ? "rotate-180" : ""}`} />
       </button>
 

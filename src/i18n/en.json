@@ -1,0 +1,62 @@
+{
+  
+  "header": {
+    "Home": "Home",
+    "Company": "Company",
+    "ContactUs": "Contact Us",
+    "Pricing": "Pricing",
+    "Support": "Support"
+  },
+  "main":{
+    "firstBusinessRegister": "First Register Business Organization",
+    "BusinessRegisUnit": "Business Unit Registration Country",
+    "BusinessOwnershipUnit":"Business Unit Ownership Mode",
+    "SubmitSalesReq":"Submit a sales request or connect with a sales associates",
+    "In":"In",
+
+    "Countries": {
+      "india": "India",
+      "usa": "United States",
+     "uk": "United Kingdom"
+    },
+
+
+    "DashBoard":{
+        "YourDash":"Your Dashboard",
+        "CreateBusinessUnit":"Create Business Unit",
+        "InProcessBussUnit":"In-Process Business Unit",
+        "RegisterBusinessUnit":"Registered Business Unit"
+    },
+
+    "GeneralSupport":{
+        "GenSupportService":"General Support Services",
+        "SalesSupp":"Sales Support",
+        "LogAccessSup":"Login/Access Support"
+    },
+    "SubscribeSupp":{
+        "TechSupp":"Technical Support",
+        "BillSupp":"Billing Support",
+        "OperationSupp":"Operation Support"
+    }
+
+  },
+  "Buttons":{
+    "Save&Continue":"Save and Continue",
+    "ConnectSalesSupp":"Connect with sales Support",
+    "MoreCities":"More Cities"
+  },
+  "Footer":{
+    "Description":"© 2024 HBKR Enterprise Pvt. Ltd. By continuing past this page, you accept to our Terms of Service, Cookie Policy, Privacy Policy and Content Policies. All trademarks are properties of their respective owners.",
+    "ForRestaurant":"For Restaurants",
+    "PartnersWithUs":"Partner with us Features for you",
+    "ForEnterprise":"For Enterprises",
+    "MailkhaneBusin":"Mailkhane Business",
+    "Legal":"Legal",
+    "Terms&Condition":"Terms & conditions cookie policy privacy policy",
+    "LiveIn":"We are Live In",
+    "Cities":"Indore Bhopal Pune Bangalore",
+    "SocialLinks":"Social Links"
+  }
+
+}
+

@@ -1,33 +1,35 @@
-
-import { Headset, LogIn } from 'lucide-react';
-import Card from '../ui/Card';
+import { Headset, LogIn } from "lucide-react";
+import Card from "../ui/Card";
+import { useTranslation } from "react-i18next";
 
 function GeneralSupportServices() {
+  const { t } = useTranslation();
+
   return (
-    <>
-        <div className="p-6 space-y-8">
-            <section>
+    <div className="p-6 space-y-8">
+      <section>
         <h2 className="text-lg font-semibold mb-4">
-          General Support Services
+          {t("main.GeneralSupport.GenSupportService")}
         </h2>
+
         <div className="flex gap-4 flex-wrap">
           <Card
-            title="Sales Support"
-            description="Submit a sales request or connect with a sales associates."
+            title={t("main.GeneralSupport.SalesSupp")}
+            description={t("main.SubmitSalesReq")}
             icon={Headset}
-            buttonText="Connect with sales support"
+            buttonText={t("Buttons.ConnectSalesSupp")}
           />
+
           <Card
-            title="Login/Access Support"
-            description="Submit a sales request or connect with a sales associates."
+            title={t("main.GeneralSupport.LogAccessSup")}
+            description={t("main.SubmitSalesReq")}
             icon={LogIn}
-            buttonText="Connect with sales support"
+            buttonText={t("Buttons.ConnectSalesSupp")}
           />
         </div>
       </section>
-        </div>
-    </>
-  )
+    </div>
+  );
 }
 
-export default GeneralSupportServices
+export default GeneralSupportServices;

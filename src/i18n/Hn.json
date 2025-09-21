@@ -1,0 +1,59 @@
+{
+  "header": {
+    "Home": "होम",
+    "Company": "कंपनी",
+    "ContactUs": "संपर्क करें",
+    "Pricing": "मूल्य निर्धारण",
+    "Support": "सहायता"
+  },
+  "main": {
+    "firstBusinessRegister": "पहले व्यवसाय संगठन का पंजीकरण करें",
+    "BusinessRegisUnit": "व्यवसाय इकाई पंजीकरण देश",
+    "BusinessOwnershipUnit": "व्यवसाय इकाई स्वामित्व मोड",
+    "SubmitSalesReq": "बिक्री अनुरोध सबमिट करें या बिक्री सहयोगी से जुड़ें",
+    "In": "में",
+
+    "Countries": {
+  "india": "भारत",
+  "usa": "अमेरिका",
+  "uk": "यूनाइटेड किंगडम"
+  
+
+},
+
+    "DashBoard": {
+      "YourDash": "आपका डैशबोर्ड",
+      "CreateBusinessUnit": "व्यवसाय इकाई बनाएं",
+      "InProcessBussUnit": "प्रक्रिया में व्यवसाय इकाई",
+      "RegisterBusinessUnit": "पंजीकृत व्यवसाय इकाई"
+    },
+
+    "GeneralSupport": {
+      "GenSupportService": "सामान्य सहायता सेवाएँ",
+      "SalesSupp": "बिक्री सहायता",
+      "LogAccessSup": "लॉगिन/एक्सेस सहायता"
+    },
+    "SubscribeSupp": {
+      "TechSupp": "तकनीकी सहायता",
+      "BillSupp": "बिलिंग सहायता",
+      "OperationSupp": "ऑपरेशन सहायता"
+    }
+  },
+  "Buttons": {
+    "Save&Continue": "सहेजें और जारी रखें",
+    "ConnectSalesSupp": "बिक्री सहायता से जुड़ें",
+    "MoreCities": "अधिक शहर"
+  },
+  "Footer": {
+    "Description": "© 2024 HBKR एंटरप्राइज प्राइवेट लिमिटेड। इस पृष्ठ से आगे बढ़ते हुए, आप हमारी सेवा की शर्तों, कुकी नीति, गोपनीयता नीति और सामग्री नीतियों को स्वीकार करते हैं। सभी ट्रेडमार्क उनके संबंधित मालिकों की संपत्ति हैं।",
+    "ForRestaurant": "रेस्तरां के लिए",
+    "PartnersWithUs": "हमारे साथ साझेदारी करें – आपके लिए विशेष सुविधाएँ",
+    "ForEnterprise": "उद्यमों के लिए",
+    "MailkhaneBusin": "मेलखाने व्यवसाय",
+    "Legal": "कानूनी",
+    "Terms&Condition": "नियम और शर्तें, कुकी नीति, गोपनीयता नीति",
+    "LiveIn": "हम उपलब्ध हैं",
+    "Cities": "इंदौर भोपाल पुणे बैंगलोर",
+    "SocialLinks": "सोशल लिंक"
+  }
+}

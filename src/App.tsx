@@ -5,6 +5,7 @@ import Company from "./pages/Company"
 import ContactUs from "./pages/ContactUs"
 import Support from "./pages/Support"
 import Pricing from "./pages/Pricing"
+import "./i18n";
 
 
 function App() {
