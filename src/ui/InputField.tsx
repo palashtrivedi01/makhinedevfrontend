@@ -5,8 +5,9 @@ interface InputFieldProps {
   label: string;
   placeholder: string;
   value: string;
-  onChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
+  onChange?: (e: React.ChangeEvent<HTMLInputElement>) => void;
   tooltip?: string;
+  readonly?: boolean;
 }
 
 const InputField: React.FC<InputFieldProps> = ({
@@ -15,6 +16,7 @@ const InputField: React.FC<InputFieldProps> = ({
   value,
   onChange,
   tooltip,
+  readonly,
 }) => {
   return (
     <div className="flex flex-col gap-1">
@@ -28,6 +30,7 @@ const InputField: React.FC<InputFieldProps> = ({
         value={value}
         onChange={onChange}
         className="border border-yellow-400 rounded-md px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-yellow-400"
+        readOnly={readonly}
       />
     </div>
   );
