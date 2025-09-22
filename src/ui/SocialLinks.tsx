@@ -1,9 +1,11 @@
 import { Linkedin, Instagram, Twitter, Youtube, Facebook } from "lucide-react";
+import { useTranslation } from "react-i18next";
 
 export default function SocialLinks() {
+  const {t} = useTranslation();
   return (
     <div className="">
-      <h2 className="text-sm font-semibold mb-3">Social Links</h2>
+      <h2 className="text-sm font-semibold mb-3">{t("Footer.SocialLinks")}</h2>
 
       <div className="flex gap-3 mb-4">
         <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer">

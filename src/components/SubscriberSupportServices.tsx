@@ -1,39 +1,42 @@
-
-import Card from '../ui/Card';
-import { Wrench, CreditCard, Settings } from 'lucide-react';
+import Card from "../ui/Card";
+import { Wrench, CreditCard, Settings } from "lucide-react";
+import { useTranslation } from "react-i18next";
 
 function SubscriberSupportServices() {
+  const { t } = useTranslation();
+
   return (
-    <>
-     <div className="p-6 space-y-8">
-        <section>
+    <div className="p-6 space-y-8">
+      <section>
         <h2 className="text-lg font-semibold mb-4">
-          Subscriber Support Services
+          {t("main.SubscribeSupp.TechSupp")} / {t("main.SubscribeSupp.BillSupp")} / {t("main.SubscribeSupp.OperationSupp")}
         </h2>
+
         <div className="flex gap-4 flex-wrap">
           <Card
-            title="Technical Support"
-            description="Submit a sales request or connect with a sales associates."
+            title={t("main.SubscribeSupp.TechSupp")}
+            description={t("main.SubmitSalesReq")}
             icon={Wrench}
-            buttonText="Connect with sales support"
+            buttonText={t("Buttons.ConnectSalesSupp")}
           />
+
           <Card
-            title="Billing Support"
-            description="Submit a sales request or connect with a sales associates."
+            title={t("main.SubscribeSupp.BillSupp")}
+            description={t("main.SubmitSalesReq")}
             icon={CreditCard}
-            buttonText="Connect with sales support"
+            buttonText={t("Buttons.ConnectSalesSupp")}
           />
+
           <Card
-            title="Operation Support"
-            description="Submit a sales request or connect with a sales associates."
+            title={t("main.SubscribeSupp.OperationSupp")}
+            description={t("main.SubmitSalesReq")}
             icon={Settings}
-            buttonText="Connect with sales support"
+            buttonText={t("Buttons.ConnectSalesSupp")}
           />
         </div>
       </section>
-     </div>
-    </>
-  )
+    </div>
+  );
 }
 
-export default SubscriberSupportServices
+export default SubscriberSupportServices;
