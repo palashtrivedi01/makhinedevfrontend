@@ -5,22 +5,26 @@ import Company from "./pages/Company"
 import ContactUs from "./pages/ContactUs"
 import Support from "./pages/Support"
 import Pricing from "./pages/Pricing"
+
 import "./i18n";
 //import SignUp  from "./pages/SignUp"
 import DirectorPAN from "./components/DirectorPAN"
 import DirectorAadhar from "./components/DirectorAdhar"
 
+import RegisterBusinessOrganization from "./pages/RegisterBusinessOrganization"
+
 
 
 function App() {
-  
+
   return (
     <>
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Layout />}>
-            
+
             <Route index element={<Home />} />
+            <Route path="/register-business-organization" element={<RegisterBusinessOrganization />} />
             <Route path="/company" element={<Company />} />
             <Route path="/contact-us" element={<ContactUs />} />
             <Route path="/pricing" element={<Pricing />} />

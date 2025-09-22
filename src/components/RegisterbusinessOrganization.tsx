@@ -4,15 +4,21 @@ import { useTranslation } from "react-i18next";
 import CountrySelect from "../ui/CountrySelect";
 import OwnershipSelect from "../ui/OwnershipSelect";
 import Button from "../ui/Button";
+import { useNavigate } from "react-router-dom";
 
 export default function RegisterbusinessOrganization() {
   const [country, setCountry] = useState<string>("");
   const [ownership, setOwnership] = useState<string>("");
 
+
   const { t } = useTranslation();
 
+  const navigate = useNavigate();
+
+
+
   const handleSubmit = () => {
-    alert(`Country: ${country}, Ownership: ${ownership}`);
+    navigate('register-business-organization');
   };
 
   return (
