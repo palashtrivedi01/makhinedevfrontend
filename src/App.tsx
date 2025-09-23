@@ -22,17 +22,12 @@ function App() {
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Layout />}>
-
             <Route index element={<Home />} />
-            <Route path="/register-business-organization" element={<RegisterBusinessOrganization />} />
             <Route path="/company" element={<Company />} />
             <Route path="/contact-us" element={<ContactUs />} />
             <Route path="/pricing" element={<Pricing />} />
             <Route path="/support" element={<Support />} />
-            {/* <Route path ="/signUp" element = {<SignUp/> } /> */}
-            <Route path = "/DirectorPAN.tsx" element ={<DirectorPAN/>} />
-            <Route path = "/DirectorAdhar" element ={<DirectorAadhar/>}/>
-
+            <Route path="/register-business-organization" element={<RegisterBusinessOrganization />} />
           </Route>
         </Routes>
       </BrowserRouter>

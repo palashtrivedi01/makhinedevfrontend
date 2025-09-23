@@ -1,9 +1,15 @@
-import { Edit } from "lucide-react";
 import React, { useState } from "react";
+import { Edit } from "lucide-react";
 import { useTranslation } from "react-i18next";
 import Button from "../ui/Button";
 
-const DirectorAadhar: React.FC = () => {
+interface DirectorAadharProps {
+  onCompleted?: () => void;
+}
+
+const DirectorAadhar: React.FC<DirectorAadharProps> = ({ onCompleted }) => {
+  const { t } = useTranslation();
+
   const [fullName, setFullName] = useState("");
   const [aadhar, setAadhar] = useState("");
   const [isValidAadhar, setIsValidAadhar] = useState(false);
@@ -12,8 +18,6 @@ const DirectorAadhar: React.FC = () => {
   const [otpSent, setOtpSent] = useState(false);
   const [otpVerified, setOtpVerified] = useState(false);
   const [otpError, setOtpError] = useState("");
-
-  const { t } = useTranslation();
 
   const validateAadhar = (value: string) => /^\d{4}\s\d{4}$/.test(value);
 
@@ -38,13 +42,18 @@ const DirectorAadhar: React.FC = () => {
       setOtpError("");
     } else {
       setOtpVerified(false);
-      setOtpError("❌ " + t("RegBussOrg.DirectorPAN.AadhaarNumberLabel") + " invalid");
+      setOtpError("❌ " + t("RegBussOrg.DirectorPAN.AadhaarNumberLabel") + " " + t("Buttons.Validate"));
     }
+  };
+
+  const handleContinue = () => {
+    if (otpVerified && onCompleted) onCompleted();
   };
 
   return (
     <div className="w-full min-h-screen flex justify-center items-center p-6">
       <div className="flex flex-col md:flex-row border border-gray-300 bg-white max-w-6xl w-full p-6 rounded-md shadow-sm">
+        
         {/* Left Section */}
         <div className="md:w-1/3 flex flex-col justify-between pr-6 border-r border-gray-300">
           <div>
@@ -66,8 +75,10 @@ const DirectorAadhar: React.FC = () => {
 
         {/* Right Section */}
         <div className="md:w-2/3 flex flex-col gap-6 pl-6">
+
           {/* Aadhaar Row */}
           <div className="flex flex-col md:flex-row gap-6">
+
             {/* Full Name Input */}
             <div className="flex-1 flex flex-col">
               <label className="text-sm font-medium text-gray-700 mb-1">
@@ -88,6 +99,7 @@ const DirectorAadhar: React.FC = () => {
               </label>
               <input
                 type="text"
+                maxLength={8}
                 placeholder="1234 5678"
                 value={aadhar}
                 onChange={(e) => setAadhar(e.target.value)}
@@ -97,37 +109,32 @@ const DirectorAadhar: React.FC = () => {
                 className="absolute right-3 top-[2.3rem] text-gray-500 cursor-pointer"
                 size={20}
               />
-
-              {/* Aadhaar Validation Messages */}
-              {isValidAadhar && (
-                <p className="text-green-600 text-sm mt-1">✅ {t("Buttons.Validate")}</p>
-              )}
-              {isInvalidAadhar && (
-                <p className="text-red-500 text-sm mt-1">❌ {t("RegBussOrg.DirectorPAN.AadhaarNumberLabel")}</p>
-              )}
+              {isValidAadhar && <p className="text-green-600 text-sm mt-1">✅ {t("Buttons.Validate")}</p>}
+              {isInvalidAadhar && <p className="text-red-500 text-sm mt-1">❌ {t("RegBussOrg.DirectorPAN.AadhaarNumberLabel")}</p>}
             </div>
 
             {/* Validate Button */}
-            <div className="flex flex-col justify-start">
+            <div className="flex flex-col mt-4 justify-start">
               <Button onClick={handleValidate} label={t("Buttons.Validate")} />
             </div>
+
           </div>
 
-          {/* OTP Input Section */}
+          {/* OTP Section */}
           {otpSent && !otpVerified && (
-            <div className="flex flex-col md:flex-row gap-4 items-center">
+            <div className="flex flex-col md:flex-row gap-4 items-end">
               <div className="flex-1 flex flex-col">
                 <label className="text-sm font-medium text-gray-700 mb-1">{t("RegBussOrg.DirectorPAN.AadhaarNumberLabel")}</label>
                 <input
                   type="text"
-                  placeholder="Enter 6-digit OTP"
+                  maxLength={6}
+                  placeholder={t("RegBussOrg.DirectorPAN.DOBPlaceholder")}
                   value={otp}
                   onChange={(e) => setOtp(e.target.value)}
                   className="w-full border border-yellow-400 rounded-md p-2 outline-none"
                 />
                 {otpError && <p className="text-red-500 text-sm mt-1">{otpError}</p>}
               </div>
-
               <Button onClick={handleVerifyOtp} label={t("Buttons.Validate")} />
             </div>
           )}
@@ -136,9 +143,10 @@ const DirectorAadhar: React.FC = () => {
           {otpVerified && (
             <div className="flex flex-col gap-2">
               <p className="text-green-600 text-sm">✅ {t("Buttons.Validate")} Successful</p>
-              <Button onClick={() => alert("Continue clicked")} label={t("Buttons.Continue")} />
+              <Button onClick={handleContinue} label={t("Buttons.Continue")} />
             </div>
           )}
+
         </div>
       </div>
     </div>

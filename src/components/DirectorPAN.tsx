@@ -5,6 +5,11 @@ import { useTranslation } from "react-i18next";
 const DirectorPANForm: React.FC = () => {
   const { t } = useTranslation();
 
+interface DirectorPANProps {
+  onValidated: () => void;
+}
+
+const DirectorPAN: React.FC<DirectorPANProps> = ({ onValidated }) => {
   const [dob, setDob] = useState("");
   const [pan, setPan] = useState("");
   const [isValid, setIsValid] = useState(false);
@@ -41,7 +46,18 @@ const DirectorPANForm: React.FC = () => {
           <button className="mt-6 bg-gray-700 hover:bg-gray-800 text-white px-4 py-2 w-fit rounded-3xl">
             {t("RegBussOrg.DirectorPAN.ChangeDirectorButton")}
           </button>
+  const handleContinue = () => {
+    if (isValid) {
+      onValidated();
+    }
+  };
+
+ 
         </div>
+        <button className="mt-6 bg-gray-700 hover:bg-gray-800 text-white px-4 py-2 w-fit rounded-3xl">
+          Change Director
+        </button>
+      </div>
 
         {/* Right Section */}
         <div className="md:w-2/3 p-6 flex flex-col md:flex-row items-top gap-6">
@@ -85,6 +101,7 @@ const DirectorPANForm: React.FC = () => {
 
             {isInvalid && <p className="text-red-500 text-sm">❌ {t("Please enter valid details")}</p>}
           </div>
+      
         </div>
       </div>
     </div>
