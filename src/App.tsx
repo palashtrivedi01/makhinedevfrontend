@@ -7,9 +7,7 @@ import Support from "./pages/Support"
 import Pricing from "./pages/Pricing"
 
 import "./i18n";
-//import SignUp  from "./pages/SignUp"
-import DirectorPAN from "./components/DirectorPAN"
-import DirectorAadhar from "./components/DirectorAdhar"
+
 
 import RegisterBusinessOrganization from "./pages/RegisterBusinessOrganization"
 

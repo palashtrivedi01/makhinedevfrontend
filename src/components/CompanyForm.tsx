@@ -36,7 +36,9 @@ const CompanyForm: React.FC<CompanyFormProps> = ({ company }) => {
     { din: "9012347", name: "Rahul Raghuwanshi", joiningDate: "01-10-2017", status: "Active" },
     { din: "9012348", name: "Rahul Raghuwanshi", joiningDate: "01-10-2017", status: "Active" },
   ];
-
+function setIsDirectorSelected(_arg0: boolean) {
+  throw new Error("Function not implemented.");
+}
   const handleContinue = () => {
     if (!selectedDirector) {
       setDirectorError("Please select a director ❌");
@@ -138,4 +140,7 @@ const CompanyForm: React.FC<CompanyFormProps> = ({ company }) => {
   );
 };
 
+
 export default CompanyForm;
+
+

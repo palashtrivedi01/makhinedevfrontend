@@ -2,14 +2,13 @@ import React, { useState } from "react";
 import Button from "../ui/Button";
 import { useTranslation } from "react-i18next";
 
-const DirectorPANForm: React.FC = () => {
-  const { t } = useTranslation();
 
 interface DirectorPANProps {
   onValidated: () => void;
 }
 
-const DirectorPAN: React.FC<DirectorPANProps> = ({ onValidated }) => {
+const DirectorPAN: React.FC<DirectorPANProps> = ({ }) => {
+  const { t } = useTranslation();
   const [dob, setDob] = useState("");
   const [pan, setPan] = useState("");
   const [isValid, setIsValid] = useState(false);
@@ -46,12 +45,7 @@ const DirectorPAN: React.FC<DirectorPANProps> = ({ onValidated }) => {
           <button className="mt-6 bg-gray-700 hover:bg-gray-800 text-white px-4 py-2 w-fit rounded-3xl">
             {t("RegBussOrg.DirectorPAN.ChangeDirectorButton")}
           </button>
-  const handleContinue = () => {
-    if (isValid) {
-      onValidated();
-    }
-  };
-
+  
  
         </div>
         <button className="mt-6 bg-gray-700 hover:bg-gray-800 text-white px-4 py-2 w-fit rounded-3xl">
@@ -104,8 +98,8 @@ const DirectorPAN: React.FC<DirectorPANProps> = ({ onValidated }) => {
       
         </div>
       </div>
-    </div>
+    
   );
 };
 
-export default DirectorPANForm;
+export default DirectorPAN;

@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { ChevronDown } from "lucide-react";
-import { useTransition } from "react";
+
 import { useTranslation } from "react-i18next";
 
 export default function CityDropdown() {

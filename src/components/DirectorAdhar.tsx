@@ -9,7 +9,6 @@ interface DirectorAadharProps {
 
 const DirectorAadhar: React.FC<DirectorAadharProps> = ({ onCompleted }) => {
   const { t } = useTranslation();
-
   const [fullName, setFullName] = useState("");
   const [aadhar, setAadhar] = useState("");
   const [isValidAadhar, setIsValidAadhar] = useState(false);

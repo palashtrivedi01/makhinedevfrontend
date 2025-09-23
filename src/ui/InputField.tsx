@@ -30,7 +30,7 @@ const InputField: React.FC<InputFieldProps> = ({
         value={value}
         onChange={onChange}
         className="border border-yellow-400 rounded-md px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-yellow-400"
-        readonly={readonly}
+        readOnly={readonly}
       />
     </div>
   );

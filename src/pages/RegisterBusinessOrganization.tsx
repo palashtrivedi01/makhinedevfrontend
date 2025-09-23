@@ -2,13 +2,11 @@ import React, { useState } from "react";
 import InstructionText from "../components/InstructionText";
 import CinForm from "../components/CinForm";
 import CompanyForm from "../components/CompanyForm";
-import { useTranslation } from "react-i18next";
-
-const RegisterForm: React.FC = () => {
-  const {t} = useTranslation();
-
-import DirectorPAN from "../components/DirectorPAN";
+import { t } from "i18next";
+import DirectorPANForm from "../components/DirectorPAN";
 import DirectorAadhar from "../components/DirectorAdhar";
+
+
 
 const RegisterForm: React.FC = () => {
   const [isCINValid, setIsCINValid] = useState<boolean>(false);
@@ -27,7 +25,7 @@ const RegisterForm: React.FC = () => {
   };
 
   const handlePANVerified = () => {
-    setIsPANVerified(true);
+    setIsPANVerified(!isPANVerified);
     setStep(4);
   };
 
@@ -86,7 +84,7 @@ const RegisterForm: React.FC = () => {
       {step === 3 && (
         <>
           <div className="border-t-2 border-gray-300 my-4"></div>
-          <DirectorPAN onValidated={handlePANVerified} />
+          <DirectorPANForm onValidated={handlePANVerified} />
         </>
       )}
 
