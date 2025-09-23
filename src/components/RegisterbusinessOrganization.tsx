@@ -18,7 +18,8 @@ export default function RegisterbusinessOrganization() {
 
 
   const handleSubmit = () => {
-    navigate('register-business-organization');
+    // Handle form submission logic here
+    navigate('/register-business-organization');
   };
 
   return (

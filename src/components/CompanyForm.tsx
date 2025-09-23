@@ -17,12 +17,14 @@ interface CompanyDetails {
 }
 
 interface CompanyFormProps {
+  setIsDirectorSelected: (isSelected: boolean) => void;
+  isDirectorSelected: boolean;
   company: CompanyDetails;
-  
 }
 
-const CompanyForm: React.FC<CompanyFormProps> = ({ company }) => {
+const CompanyForm: React.FC<CompanyFormProps> = ({ company, setIsDirectorSelected }) => {
   const [selectedDirector, setSelectedDirector] = useState<string>("");
+  const [directorError, setDirectorError] = useState<string>(""); // <-- Add error state
 
   const directors = [
     { din: "9012345", name: "Rahul Raghuwanshi", joiningDate: "01-10-2017", status: "Active" },
@@ -33,10 +35,11 @@ const CompanyForm: React.FC<CompanyFormProps> = ({ company }) => {
 
   const handleContinue = () => {
     if (!selectedDirector) {
-      alert("Please select a director ❌");
+      setDirectorError("Please select a director ❌");
       return;
     }
-    alert(`✅ Company registered with director DIN: ${selectedDirector}`);
+    setDirectorError(""); // Clear error
+    setIsDirectorSelected(true); // This will trigger the next step
   };
 
   return (
@@ -67,6 +70,11 @@ const CompanyForm: React.FC<CompanyFormProps> = ({ company }) => {
 
       {/* Directors Table */}
       <DirectorTable directors={directors} onSelect={setSelectedDirector} />
+
+      {/* Validation Message */}
+      {directorError && (
+        <div className="text-red-500 text-sm mt-2">{directorError}</div>
+      )}
 
       {/* Continue Button */}
       <div className="flex justify-end mt-4">
