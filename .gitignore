@@ -13,6 +13,24 @@ dist-ssr
 *.local
 
 bun.lock
+package-lock.json
+yarn.lock
+pnpm-lock.yaml
+.next
+out
+build
+.DS_Store
+.cache
+.nuxt
+.vercel
+.env
+.env.local
+.env.*.local
+.vscode
+.idea
+*.suo
+package.json
+tsconfig.json
 
 
 # Editor directories and files
