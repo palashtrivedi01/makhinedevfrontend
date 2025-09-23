@@ -1,5 +1,5 @@
 import { useTranslation } from "react-i18next";
-import { NavLink } from "react-router-dom";
+import { NavLink, Link } from "react-router-dom";
 import LocationLanguageSelector from "../ui/LocationLanguageSelector";
 
 function Header() {
@@ -7,8 +7,9 @@ function Header() {
 
   return (
     <div className="w-full h-1/6 px-4 py-4 flex flex-row justify-between items-center border-b border-gray-300 shadow-md">
-      <img src="src/assets/logo.png" alt="logo" className="w-64" />
-
+      <Link to="/">
+        <img src="src/assets/logo.png" alt="logo" className="w-64" />
+      </Link>
       <div className="flex flex-col items-end gap-3">
         <div>
           <LocationLanguageSelector />

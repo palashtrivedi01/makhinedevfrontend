@@ -5,7 +5,7 @@ import CompanyForm from "../components/CompanyForm";
 
 const RegisterForm: React.FC = () => {
 
-  
+
   return (
     <div className="w-full h-fit min-h-screen flex flex-col gap-4 p-4 px-16">
       <h2 className="text-xl font-semibold text-center text-orange-500 mb-4">
