@@ -15,16 +15,6 @@ interface CountrySelectProps {
 export default function CountrySelect({ country, setCountry }:
 CountrySelectProps) {
     const { t } = useTranslation();
-
-  const countries = [
-    { value: "india", label: t("main.Countries.india"), flag: "🇮🇳" },
-    { value: "usa", label: t("main.Countries.usa"), flag: "🇺🇸" },
-    { value: "uk", label: t("main.Countries.uk"), flag: "🇬🇧" },
-  ];
- // const { t } = useTranslation();
-
-
-export default function CountrySelect({ country, setCountry }: CountrySelectProps) {
   interface Country {
     value: string;
     country_code: string;

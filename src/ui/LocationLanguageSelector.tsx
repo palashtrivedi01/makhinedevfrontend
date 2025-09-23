@@ -1,5 +1,13 @@
+<<<<<<< Updated upstream
 import { ChevronDown, Languages, MapPin } from "lucide-react";
 import { useState } from "react";
+=======
+
+import { ChevronDown, MapPin, Languages } from "lucide-react";
+import { useState } from "react";
+
+
+>>>>>>> Stashed changes
 import { useTranslation } from "react-i18next";
 
 export const LocationLanguageSelector = () => {
