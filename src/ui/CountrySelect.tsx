@@ -1,36 +1,22 @@
 import SelectField from "./SelectField";
-
 import { useTranslation } from "react-i18next";
-
 import { getCountries } from "../services/third-party-api.ts"
 import React,{ useEffect } from "react";
-
 
 interface CountrySelectProps {
   country: string;
   setCountry: (value: string) => void;
 }
 
-
-export default function CountrySelect({ country, setCountry }:
-CountrySelectProps) {
-    const { t } = useTranslation();
-
-  const countries = [
-    { value: "india", label: t("main.Countries.india"), flag: "🇮🇳" },
-    { value: "usa", label: t("main.Countries.usa"), flag: "🇺🇸" },
-    { value: "uk", label: t("main.Countries.uk"), flag: "🇬🇧" },
-  ];
- // const { t } = useTranslation();
-
+interface Country {
+  name: string;
+  country_code: string;
+  flag: string;
+}
 
 export default function CountrySelect({ country, setCountry }: CountrySelectProps) {
-  interface Country {
-    value: string;
-    country_code: string;
-    name: string;
-  }
-
+  
+  const { t } = useTranslation();
   const [countries, setCountries] = React.useState<Country[]>([]);
 
   useEffect(() => {
@@ -53,7 +39,7 @@ export default function CountrySelect({ country, setCountry }: CountrySelectProp
       value={country}
       onChange={setCountry}
       options={countries.map((c) => ({
-        value: c.value,
+        value: c.name,
         label: `${c.name} - ${c.country_code}`,
       }))}
     />
