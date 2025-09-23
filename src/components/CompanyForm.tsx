@@ -1,7 +1,8 @@
 import React, { useState } from "react";
+import { useTranslation } from "react-i18next";
+import Button from "../ui/Button";
 import InputField from "../ui/InputField";
 import DirectorTable from "./DirectorTable";
-import Button from "../ui/Button";
 
 interface CompanyDetails {
   name: string;
@@ -18,10 +19,10 @@ interface CompanyDetails {
 
 interface CompanyFormProps {
   company: CompanyDetails;
-  
 }
 
 const CompanyForm: React.FC<CompanyFormProps> = ({ company }) => {
+  const { t } = useTranslation();
   const [selectedDirector, setSelectedDirector] = useState<string>("");
 
   const directors = [
@@ -43,26 +44,76 @@ const CompanyForm: React.FC<CompanyFormProps> = ({ company }) => {
     <div className="border border-gray-300 p-6 bg-white w-full">
       {/* Form Fields */}
       <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-        <InputField label="Company Name" placeholder="Enter company name" value={company.name} readonly />
-        <InputField label="Date Of Incorporation" placeholder="DD-MM-YYYY" value={company.date} readonly />
-        <InputField label="Country Of Incorporation" placeholder="Enter country" value={company.country} readonly />
+        <InputField
+          label={t("RegBussOrg.CompanyDetails.ComName")}
+          placeholder="Enter company name"
+          value={company.name}
+          readonly
+        />
+        <InputField
+          label={t("RegBussOrg.CompanyDetails.DateOfIncorp")}
+          placeholder="DD-MM-YYYY"
+          value={company.date}
+          readonly
+        />
+        <InputField
+          label={t("RegBussOrg.CompanyDetails.CountryIncrop")}
+          placeholder="Enter country"
+          value={company.country}
+          readonly
+        />
 
-        <InputField label="Company Category" placeholder="Enter category" value={company.category} readonly />
-        <InputField label="Company Sub Category" placeholder="Enter sub category" value={company.subCategory} readonly />
-        <InputField label="Company Status" placeholder="Enter status" value={company.status} readonly />
+        <InputField
+          label={t("RegBussOrg.CompanyDetails.ComCategory")}
+          placeholder="Enter category"
+          value={company.category}
+          readonly
+        />
+        <InputField
+          label={t("RegBussOrg.CompanyDetails.ComSubCategory")}
+          placeholder="Enter sub category"
+          value={company.subCategory}
+          readonly
+        />
+        <InputField
+          label={t("RegBussOrg.CompanyDetails.Comstatus")}
+          placeholder="Enter status"
+          value={company.status}
+          readonly
+        />
 
-        <InputField label="Company Address" placeholder="Enter address" value={company.address} readonly />
-        <InputField label="Registered Email Address" placeholder="Enter email" value={company.email} readonly />
-        <InputField label="Class Of Company" placeholder="Enter class" value={company.classOfCompany} readonly   />
+        <InputField
+          label={t("RegBussOrg.CompanyDetails.ComAddres")}
+          placeholder="Enter address"
+          value={company.address}
+          readonly
+        />
+        <InputField
+          label={t("RegBussOrg.CompanyDetails.RegEmail")}
+          placeholder="Enter email"
+          value={company.email}
+          readonly
+        />
+        <InputField
+          label={t("RegBussOrg.CompanyDetails.ClassOfCom")}
+          placeholder="Enter class"
+          value={company.classOfCompany}
+          readonly
+        />
 
-        <InputField label="Company Type" placeholder="Enter type" value={company.type} readonly />
+        <InputField
+          label={t("RegBussOrg.CompanyDetails.ComType")}
+          placeholder="Enter type"
+          value={company.type}
+          readonly
+        />
       </div>
 
       {/* Note */}
       <p className="text-xs text-gray-600 mt-4">
-        Please choose the Director, who is an Indian National. This DIN owner will do the Aadhaar Based Esigning of the Terms Agreement with Mcaikname.
+        {t("RegBussOrg.CompanyDetails.para")}
         <br />
-        <strong>Note:</strong> For Aadhaar Based Esigning, it is mandatory that your mobile number is linked to your Aadhaar number.
+        <strong>{t("RegBussOrg.CompanyDetails.Note1")}</strong>
       </p>
 
       {/* Directors Table */}
@@ -70,7 +121,7 @@ const CompanyForm: React.FC<CompanyFormProps> = ({ company }) => {
 
       {/* Continue Button */}
       <div className="flex justify-end mt-4">
-        <Button label="Continue" onClick={handleContinue} />
+        <Button label={t("Buttons.Continue")} onClick={handleContinue} />
       </div>
     </div>
   );

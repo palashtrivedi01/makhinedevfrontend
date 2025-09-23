@@ -2,21 +2,23 @@ import React from "react";
 import InstructionText from "../components/InstructionText";
 import CinForm from "../components/CinForm";
 import CompanyForm from "../components/CompanyForm";
+import { useTranslation } from "react-i18next";
 
 const RegisterForm: React.FC = () => {
+  const {t} = useTranslation();
 
 
   return (
     <div className="w-full h-fit min-h-screen flex flex-col gap-4 p-4 px-16">
       <h2 className="text-xl font-semibold text-center text-orange-500 mb-4">
-        Register business organisation
+        {t("RegBussOrg.Heading")}
       </h2>
       <InstructionText
         content={[
-          "CIN number of the Company: CIN number assigned for company registration in India...",
-          "DIN number of Director of the Company: DIN of an active Director of the Company...",
+          t("RegBussOrg.Points1"),
+          t("RegBussOrg.Points2"),
         ]}
-        note="For Aadhaar Based Esigning, it is mandatory that your mobile number is linked to your Aadhaar number."
+        note={t("RegBussOrg.Note")}
       />
       <CinForm />
       <div className="border-t-2 border-gray-300 my-4"></div>
