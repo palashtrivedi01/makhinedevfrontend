@@ -13,6 +13,8 @@
     "BusinessOwnershipUnit":"Business Unit Ownership Mode",
     "SubmitSalesReq":"Submit a sales request or connect with a sales associates",
     "In":"In",
+    "Note":"Note",
+    "ErrorMsg":"Please select a director ❌",
 
     "Countries": {
       "india": "India",
@@ -86,7 +88,7 @@
       "RegEmail":"Registered Email Address",
       "ClassOfCom":"Class Of Company",
       "ComType":"Company Type",
-      "para":"Please choose the Director, who is an Indian National. This DIN owner will do the Aadhaar Based Esigning of the Terms Agreement with Mcaikname.",
+      "para":"Please choose the Director, who is an Indian National. This DIN owner will do the Aadhaar Based Esigning of the Terms Agreement with Maikhname.",
       "Note1":"Note: For Aadhaar Based Esigning, it is mandatory that your mobile number is linked to your Aadhaar number."
     },
     
@@ -100,7 +102,9 @@
     "DOBPlaceholder": "dd-mm-yyyy",
     "PANLabel": "Enter PAN Number Of DIN Holder",
     "FullNameAdhar": "Full Name Of Aadhaar Holder",
-    "AadhaarNumberLabel": "Enter First 8 Digits Of Aadhaar Number"
+    "AadhaarNumberLabel": "Enter First 8 Digits Of Aadhaar Number",
+    "OTP": "Enter OTP",
+    "NoOTP":"123456"
   }
   
     

@@ -122,11 +122,11 @@ const DirectorAadhar: React.FC<DirectorAadharProps> = ({ onCompleted }) => {
         {otpSent && !otpVerified && (
           <div className="flex flex-col md:flex-row gap-4 items-end">
             <div className="flex-1 flex flex-col">
-              <label className="text-sm font-medium text-gray-700 mb-1">{t("RegBussOrg.DirectorPAN.AadhaarNumberLabel")}</label>
+              <label className="text-sm font-medium text-gray-700 mb-1">{t("RegBussOrg.DirectorPAN.OTP")}</label>
               <input
                 type="text"
                 maxLength={6}
-                placeholder={t("RegBussOrg.DirectorPAN.DOBPlaceholder")}
+                placeholder={t("RegBussOrg.DirectorPAN.NoOTP")}
                 value={otp}
                 onChange={(e) => setOtp(e.target.value)}
                 className="w-full border border-yellow-400 rounded-md p-2 outline-none"
