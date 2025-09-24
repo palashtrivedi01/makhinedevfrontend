@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { useTranslation } from "react-i18next";
 
 interface Director {
   din: string;
@@ -14,6 +15,7 @@ interface DirectorTableProps {
 
 const DirectorTable: React.FC<DirectorTableProps> = ({ directors, onSelect }) => {
   const [selectedDIN, setSelectedDIN] = useState<string>("");
+  const { t } = useTranslation();
 
   const handleSelect = (din: string) => {
     setSelectedDIN(din);
@@ -21,14 +23,15 @@ const DirectorTable: React.FC<DirectorTableProps> = ({ directors, onSelect }) =>
   };
 
   return (
-    <table className="w-full border border-gray-200 mt-4 text-sm">
+    <div className="overflow-x-auto">
+    <table className="w-full border border-gray-200 mt-4 text-sm overflow-x-auto">
       <thead>
         <tr className="bg-orange-400 text-white text-left">
-          <th className="p-2">Select</th>
-          <th className="p-2">DIN Number</th>
-          <th className="p-2">Director Name</th>
-          <th className="p-2">Date of Joining</th>
-          <th className="p-2">DIN Status</th>
+          <th className="p-2">{t("RegBussOrg.Select")}</th>
+          <th className="p-2">{t("RegBussOrg.DINnumber")}</th>
+          <th className="p-2">{t("RegBussOrg.DirectorName")}</th>
+          <th className="p-2">{t("RegBussOrg.DateJoin")}</th>
+          <th className="p-2">{t("RegBussOrg.DINStatus")}</th>
         </tr>
       </thead>
       <tbody>
@@ -55,6 +58,8 @@ const DirectorTable: React.FC<DirectorTableProps> = ({ directors, onSelect }) =>
         ))}
       </tbody>
     </table>
+
+    </div>
   );
 };
 

@@ -2,6 +2,7 @@ import { useState, useEffect } from "react"
 import InputField from "../ui/InputField"
 import CaptchaBox from "./CapchaBox"
 import Button from "../ui/Button"
+import { useTranslation } from "react-i18next"
 
 interface CinFormProps {
     IsCINValid: boolean;
@@ -14,6 +15,8 @@ const CinForm = ({ IsCINValid, setIsCINValid, actionLabel = "Validate", onChange
     const genCaptcha = () => {
         return Math.random().toString(36).substring(2, 10).toUpperCase();
     }
+    const {t} = useTranslation();
+    
 
     const [cin, setCin] = useState("")
     const [captcha, setCaptcha] = useState(genCaptcha())
@@ -64,29 +67,32 @@ const CinForm = ({ IsCINValid, setIsCINValid, actionLabel = "Validate", onChange
 
     return (
         <>
-            <form className="p-4 flex flex-row gap-4 items-end" onSubmit={handleValidate}>
+            <form className="p-4 flex  flex-col md:flex-row gap-4 items-center " onSubmit={handleValidate}>
                 <InputField
-                    label="CIN (Company Incorporation Number)"
+                    label={t("RegBussOrg.CIN")}
                     placeholder="HGEUA9660T"
                     value={cin}
                     onChange={(e) => setCin(e.target.value)}
                     tooltip="Enter your 21-digit CIN"
                     readonly={IsCINValid}
                 />
-
+                <div className="w-full flex flex-row ml-16 gap-2">
                 <div>
+                    <label className="text-sm font-medium text-gray-700">{t("RegBussOrg.Captch")}</label>
                     <CaptchaBox captcha={captcha} />
                 </div>
 
                 <InputField
-                    label="Enter Captcha"
+                    label={t("RegBussOrg.EnterCaptch")}
                     placeholder="HGEUA9660T"
                     value={enteredCaptcha}
                     onChange={handleCaptchaInput}
                     readonly={IsCINValid}
                 />
+                </div>
+                <Button label={t("Buttons.Validate")}onClick={handleValidate} />
 
-                <Button label={actionLabel} onClick={handleValidate} />
+                
             </form>
             {captchaError && (
                 <div className="text-red-500 text-sm px-4">{captchaError}</div>

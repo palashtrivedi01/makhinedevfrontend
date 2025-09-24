@@ -13,6 +13,8 @@
     "BusinessOwnershipUnit":"Business Unit Ownership Mode",
     "SubmitSalesReq":"Submit a sales request or connect with a sales associates",
     "In":"In",
+    "Note":"Note",
+    "ErrorMsg":"Please select a director ❌",
 
     "Countries": {
       "india": "India",
@@ -43,7 +45,9 @@
   "Buttons":{
     "Save&Continue":"Save and Continue",
     "ConnectSalesSupp":"Connect with sales Support",
-    "MoreCities":"More Cities"
+    "MoreCities":"More Cities",
+    "Validate":"Validate",
+    "Continue":"Continue"
   },
   "Footer":{
     "Description":"© 2024 HBKR Enterprise Pvt. Ltd. By continuing past this page, you accept to our Terms of Service, Cookie Policy, Privacy Policy and Content Policies. All trademarks are properties of their respective owners.",
@@ -56,7 +60,57 @@
     "LiveIn":"We are Live In",
     "Cities":"Indore Bhopal Pune Bangalore",
     "SocialLinks":"Social Links"
+  },
+
+  "RegBussOrg":{
+    "Heading":"Register business organisation",
+    "PreReq":"Prerequisites that User shall keep ready:",
+    "Points1":"CIN number of the Company: CIN number assigned for company registration in India...",
+    "Points2":"DIN number of Director of the Company: DIN of an active Director of the Company...",
+    "Note":" For Aadhaar Based Esigning, it is mandatory that your mobile number is linked to your Aadhaar number.",
+    "CIN":"CIN (Company Incorporation Number)",
+    "Captch":"Captch",
+    "EnterCaptch":"Enter Catch",
+    "Select":"Select",
+    "DINnumber":"DIN Number",
+    "DirectorName":"Director Name",
+    "DateJoin":"Date of Joining",
+    "DINStatus":"DIN Status",
+
+    "CompanyDetails":{
+      "ComName":"Company Name",
+      "DateOfIncorp":"Date Of Incorporation",
+      "CountryIncrop":"Country Of Incorporation",
+      "ComCategory":"Company Category",
+      "ComSubCategory":"Company Sub Category",
+      "Comstatus":"Company Status",
+      "ComAddres":"Company Address",
+      "RegEmail":"Registered Email Address",
+      "ClassOfCom":"Class Of Company",
+      "ComType":"Company Type",
+      "para":"Please choose the Director, who is an Indian National. This DIN owner will do the Aadhaar Based Esigning of the Terms Agreement with Maikhname.",
+      "Note1":"Note: For Aadhaar Based Esigning, it is mandatory that your mobile number is linked to your Aadhaar number."
+    },
+    
+    "DirectorPAN": {
+    "Heading": "Director Details",
+    "DINNumberLabel": "Director DIN Number",
+    "FullNameLabel": "Director Full Name",
+    "NationalityLabel": "Nationality",
+    "ChangeDirectorButton": "Change Director",
+    "DOBLabel": "Enter Date Of Birth Of DIN Holder",
+    "DOBPlaceholder": "dd-mm-yyyy",
+    "PANLabel": "Enter PAN Number Of DIN Holder",
+    "FullNameAdhar": "Full Name Of Aadhaar Holder",
+    "AadhaarNumberLabel": "Enter First 8 Digits Of Aadhaar Number",
+    "OTP": "Enter OTP",
+    "NoOTP":"123456"
   }
+  
+    
+  
+}
+
 
 }
 

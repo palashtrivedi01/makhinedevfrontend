@@ -2,8 +2,11 @@ import React, { useState } from "react";
 import InstructionText from "../components/InstructionText";
 import CinForm from "../components/CinForm";
 import CompanyForm from "../components/CompanyForm";
-import DirectorPAN from "../components/DirectorPAN";
+import { t } from "i18next";
+import DirectorPANForm from "../components/DirectorPAN";
 import DirectorAadhar from "../components/DirectorAdhar";
+
+
 
 const RegisterForm: React.FC = () => {
   const [isCINValid, setIsCINValid] = useState<boolean>(false);
@@ -34,16 +37,16 @@ const RegisterForm: React.FC = () => {
   };
 
   return (
-    <div className="w-full h-fit min-h-screen flex flex-col gap-4 p-4 px-16">
+    <div className="w-full h-fit min-h-screen flex flex-col gap-4 p-4 px-4 md:px-16 sm:px-4 sm:flex-col sm:gap-2 ">
       <h2 className="text-xl font-semibold text-center text-orange-500 mb-4">
-        Register business organisation
+        {t("RegBussOrg.Heading")}
       </h2>
       <InstructionText
         content={[
-          "CIN number of the Company: CIN number assigned for company registration in India...",
-          "DIN number of Director of the Company: DIN of an active Director of the Company...",
+          t("RegBussOrg.Points1"),
+          t("RegBussOrg.Points2"),
         ]}
-        note="For Aadhaar Based Esigning, it is mandatory that your mobile number is linked to your Aadhaar number."
+        note={t("RegBussOrg.Note")}
       />
 
       {/* CIN Form is always visible */}
@@ -81,7 +84,7 @@ const RegisterForm: React.FC = () => {
       {step === 3 && (
         <>
           <div className="border-t-2 border-gray-300 my-4"></div>
-          <DirectorPAN onValidated={handlePANVerified} />
+          <DirectorPANForm onValidated={handlePANVerified} />
         </>
       )}
 
