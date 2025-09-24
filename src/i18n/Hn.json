@@ -12,6 +12,9 @@
     "BusinessOwnershipUnit": "व्यवसाय इकाई स्वामित्व मोड",
     "SubmitSalesReq": "बिक्री अनुरोध सबमिट करें या बिक्री सहयोगी से जुड़ें",
     "In": "में",
+    "Note": "नोट",
+    "ErrorMsg": "कृपया निदेशक चुनें ❌",
+
     "Countries": {
       "india": "भारत",
       "usa": "अमेरिका",
@@ -91,10 +94,13 @@
     "DOBPlaceholder": "दिन- माह- वर्ष",
     "PANLabel": "DIN धारक का PAN नंबर दर्ज करें",
      "FullNameAdhar": "आधार धारक का पूरा नाम",
-      "AadhaarNumberLabel": "आधार संख्या के पहले 8 अंक दर्ज करें"
+      "AadhaarNumberLabel": "आधार संख्या के पहले 8 अंक दर्ज करें",
+      "OTP": "ओटीपी दर्ज करें",
+      "NoOTP": "123456"
+
   },
   
-  "Validation Successful": "सत्यापन सफल हुआ",
-  "Please enter valid details": "कृपया वैध विवरण दर्ज करें"
+  "ValidationSuccessful": "सत्यापन सफल हुआ",
+  "Pleaseentervaliddetails": "कृपया वैध विवरण दर्ज करें"
   }
 }
