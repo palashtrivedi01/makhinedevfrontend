@@ -41,10 +41,10 @@ const DirectorPAN: React.FC<DirectorPANProps> = ({ onValidated }) => {
             <span className="font-medium">{t("RegBussOrg.DirectorPAN.NationalityLabel")}:</span> India
           </p>
         </div>
+
         <button className="mt-6 bg-gray-700 hover:bg-gray-800 text-white px-4 py-2 w-fit rounded-3xl">
           {t("RegBussOrg.DirectorPAN.ChangeDirectorButton")}
         </button>
-
 
       </div>
 

@@ -8,10 +8,10 @@ function Footer() {
   const { t } = useTranslation();
 
   return (
-    <div className="w-full px-4 py-8 flex flex-row justify-between items-start border-t border-gray-300">
-      <div className="flex flex-row justify-between flex-start w-2/3">
+    <div className="w-full px-4 py-8 flex flex-col md:flex-row justify-between items-start gap-8 border-t border-gray-300">
+      <div className="flex flex-col md:flex-row justify-between flex-start gap-4 w-full md:w-2/3">
         {/* Left Section */}
-        <div className="flex flex-col gap-4 w-1/4 text-xs">
+        <div className="w-full flex flex-col gap-4 md:w-1/4 text-xs">
           <img src="src/assets/logo.png" alt="logo" className="w-48" />
           <p>{t("Footer.Description")}</p>
         </div>
@@ -61,7 +61,7 @@ function Footer() {
       </div>
 
       {/* Right Section */}
-      <div className="flex flex-col items-end gap-4 w-1/3">
+      <div className="flex flex-col md:items-end gap-4 w-full md:w-1/3">
         <div className="text-xs flex flex-col gap-4 items-start">
           <LocationLanguageSelector />
           <SocialLinks />
