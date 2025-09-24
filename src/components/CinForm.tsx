@@ -75,7 +75,6 @@ const CinForm = ({ IsCINValid, setIsCINValid, actionLabel = "Validate", onChange
                 />
 
                 <div>
-                    <label className="text-sm font-medium text-gray-700">Captcha</label>
                     <CaptchaBox captcha={captcha} />
                 </div>
 

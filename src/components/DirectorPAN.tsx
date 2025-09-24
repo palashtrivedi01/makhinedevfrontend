@@ -50,9 +50,9 @@ const DirectorPAN: React.FC<DirectorPANProps> = ({ onValidated }) => {
             <span className="font-medium">Nationality:</span> India
           </p>
         </div>
-        <button className="mt-6 bg-gray-700 hover:bg-gray-800 text-white px-4 py-2 w-fit rounded-3xl">
+        {/* <button className="mt-6 bg-gray-700 hover:bg-gray-800 text-white px-4 py-2 w-fit rounded-3xl">
           Change Director
-        </button>
+        </button> */}
       </div>
 
       {/* Divider */}

@@ -22,7 +22,7 @@ const RegisterForm: React.FC = () => {
   };
 
   const handlePANVerified = () => {
-    setIsPANVerified(true);
+    setIsPANVerified(!isPANVerified);
     setStep(4);
   };
 
