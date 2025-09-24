@@ -1,21 +1,35 @@
 import { useTranslation } from "react-i18next";
 import { NavLink, Link } from "react-router-dom";
 import LocationLanguageSelector from "../ui/LocationLanguageSelector";
+import { Menu, X } from "lucide-react";
+import { useState } from "react";
 
 function Header() {
   const { t } = useTranslation();
 
+  const [isMenuOpen, setIsMenuOpen] = useState(false)
+
+  const handleMenuClick = () => {
+    setIsMenuOpen(!isMenuOpen)
+  }
+
   return (
-    <div className="w-full h-1/6 px-4 py-4 flex flex-row justify-between items-center border-b border-gray-300 shadow-md">
+    <div className="w-screen h-fit px-4 py-4 flex flex-row flex-wrap justify-between items-center border-b border-gray-300 shadow-md">
       <Link to="/">
-        <img src="src/assets/logo.png" alt="logo" className="w-64" />
+        <img src="src/assets/logo.png" alt="logo" className="w-64 h-fit" />
       </Link>
-      <div className="flex flex-col items-end gap-3">
+
+      <div>
+          <Menu className={`md:hidden ${isMenuOpen? "hidden": ""} w-8 h-8`} onClick={handleMenuClick}/>
+          <X className={`md:hidden ${isMenuOpen? "": "hidden"} w-8 h-8`} onClick={handleMenuClick}/>
+      </div>
+
+      <div className={`${isMenuOpen? "": "hidden"} md:flex flex-col items-end gap-4`}>
         <div>
           <LocationLanguageSelector />
         </div>
 
-        <div className="flex flex-row gap-6 text-lg">
+        <div className="flex flex-col md:flex-row flex-wrap gap-6 text-lg">
           <NavLink
             to="/"
             className={({ isActive }) =>
