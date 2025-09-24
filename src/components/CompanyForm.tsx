@@ -50,11 +50,11 @@ const CompanyForm: React.FC<CompanyFormProps> = ({ company, setIsDirectorSelecte
       <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
         <InputField label={t("RegBussOrg.CompanyDetails.ComName")} placeholder="Enter company name" value={company.name} readonly />
         <InputField label={t("RegBussOrg.CompanyDetails.DateOfIncorp")} placeholder="DD-MM-YYYY" value={company.date} readonly />
-        <InputField label={t("RegBussOrg.CompanyDetails.CountryIncorp")}  placeholder="Enter country" value={company.country} readonly />
+        <InputField label={t("RegBussOrg.CompanyDetails.CountryIncrop")}  placeholder="Enter country" value={company.country} readonly />
 
         <InputField label={t("RegBussOrg.CompanyDetails.ComCategory")} placeholder="Enter category" value={company.category} readonly />
         <InputField label={t("RegBussOrg.CompanyDetails.ComSubCategory")} placeholder="Enter sub category" value={company.subCategory} readonly />
-        <InputField label={t("RegBussOrg.CompanyDetails.ComStatus")}  placeholder="Enter status" value={company.status} readonly />
+        <InputField label={t("RegBussOrg.CompanyDetails.Comstatus")}  placeholder="Enter status" value={company.status} readonly />
 
         <InputField label={t("RegBussOrg.CompanyDetails.ComAddres")} placeholder="Enter address" value={company.address} readonly />
         <InputField label={t("RegBussOrg.CompanyDetails.RegEmail")} placeholder="Enter email" value={company.email} readonly />
@@ -67,7 +67,7 @@ const CompanyForm: React.FC<CompanyFormProps> = ({ company, setIsDirectorSelecte
       <p className="text-xs text-gray-600 mt-4">
         {t("RegBussOrg.CompanyDetails.para")} 
         <br />
-        <strong>t{"main.Note"}:</strong> {t("RegBussOrg.CompanyDetails.Note1")} 
+        <strong>{t("main.Note")}:</strong> {t("RegBussOrg.CompanyDetails.Note1")}
       </p>
 
       {/* Directors Table */}

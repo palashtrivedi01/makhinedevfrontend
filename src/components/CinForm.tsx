@@ -67,7 +67,7 @@ const CinForm = ({ IsCINValid, setIsCINValid, actionLabel = "Validate", onChange
 
     return (
         <>
-            <form className="p-4 flex flex-row gap-4 items-end" onSubmit={handleValidate}>
+            <form className="p-4 flex  flex-col md:flex-row gap-4 items-center " onSubmit={handleValidate}>
                 <InputField
                     label={t("RegBussOrg.CIN")}
                     placeholder="HGEUA9660T"
@@ -76,7 +76,7 @@ const CinForm = ({ IsCINValid, setIsCINValid, actionLabel = "Validate", onChange
                     tooltip="Enter your 21-digit CIN"
                     readonly={IsCINValid}
                 />
-
+                <div className="w-full flex flex-row ml-16 gap-2">
                 <div>
                     <label className="text-sm font-medium text-gray-700">{t("RegBussOrg.Captch")}</label>
                     <CaptchaBox captcha={captcha} />
@@ -89,8 +89,7 @@ const CinForm = ({ IsCINValid, setIsCINValid, actionLabel = "Validate", onChange
                     onChange={handleCaptchaInput}
                     readonly={IsCINValid}
                 />
-
-
+                </div>
                 <Button label={t("Buttons.Validate")}onClick={handleValidate} />
 
                 

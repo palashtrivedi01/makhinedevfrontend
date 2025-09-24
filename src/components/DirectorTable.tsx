@@ -23,7 +23,8 @@ const DirectorTable: React.FC<DirectorTableProps> = ({ directors, onSelect }) =>
   };
 
   return (
-    <table className="w-full border border-gray-200 mt-4 text-sm">
+    <div className="overflow-x-auto">
+    <table className="w-full border border-gray-200 mt-4 text-sm overflow-x-auto">
       <thead>
         <tr className="bg-orange-400 text-white text-left">
           <th className="p-2">{t("RegBussOrg.Select")}</th>
@@ -57,6 +58,8 @@ const DirectorTable: React.FC<DirectorTableProps> = ({ directors, onSelect }) =>
         ))}
       </tbody>
     </table>
+
+    </div>
   );
 };
 
