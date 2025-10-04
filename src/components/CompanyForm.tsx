@@ -49,7 +49,7 @@ const CompanyForm: React.FC<CompanyFormProps> = ({ company, setIsDirectorSelecte
       {/* Form Fields */}
       <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
         <InputField label={t("RegBussOrg.CompanyDetails.ComName")} placeholder="Enter company name" value={company.name} readonly />
-        <InputField label={t("RegBussOrg.CompanyDetails.DateOfIncorp")} placeholder="DD-MM-YYYY" value={company.date} readonly
+        <InputField label={t("RegBussOrg.CompanyDetails.DateOfIncorp")} placeholder="DD-MM-YYYY" value={company.date} readonly />
         <InputField label={t("RegBussOrg.CompanyDetails.CountryIncrop")}  placeholder="Enter country" value={company.country} readonly />
 
         <InputField label={t("RegBussOrg.CompanyDetails.ComCategory")} placeholder="Enter category" value={company.category} readonly />

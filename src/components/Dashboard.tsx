@@ -12,7 +12,7 @@ const Dashboard = () => {
           {t("main.DashBoard.YourDash")}
         </h2>
 
-        <div className="flex gap-4 flex-wrap">
+        <div className="flex gap-4 flex-wrap flex-col md:flex-row">
           <Card
             title={t("main.DashBoard.CreateBusinessUnit")}
             description={t("main.SubmitSalesReq")}

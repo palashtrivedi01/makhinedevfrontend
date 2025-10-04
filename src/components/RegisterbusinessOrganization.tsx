@@ -23,13 +23,13 @@ export default function RegisterbusinessOrganization() {
   };
 
   return (
-    <div className="w-full flex flex-col gap-6 p-2 md:p-6 bg-white rounded-lg ml-12">
+    <div className="w-full flex flex-col gap-6 p-6 bg-white rounded-lg">
       <div className="flex items-center gap-2 mb-4">
         <h2 className="text-2xl font-medium text-gray-700">{t("main.firstBusinessRegister")}</h2>
         <Info className="w-8 h-8 pt-2 text-yellow-500" />
       </div>
 
-      <div className="flex flex-col  md:flex-row items-start gap-4 ">
+      <div className="flex flex-col md:flex-row md:items-end justify-start gap-4 ">
         <CountrySelect country={country} setCountry={setCountry} />
         <OwnershipSelect ownership={ownership} setOwnership={setOwnership} />
         <Button className ="" label= {t("Buttons.Save&Continue")} onClick={handleSubmit} />

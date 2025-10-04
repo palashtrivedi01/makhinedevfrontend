@@ -1,104 +1,103 @@
-import { useState, useEffect } from "react"
-import InputField from "../ui/InputField"
-import CaptchaBox from "./CapchaBox"
-import Button from "../ui/Button"
-import { useTranslation } from "react-i18next"
+import { useState, useEffect } from "react";
+import InputField from "../ui/InputField";
+import CaptchaBox from "./CapchaBox";
+import Button from "../ui/Button";
+import { useTranslation } from "react-i18next";
 
 interface CinFormProps {
-    IsCINValid: boolean;
-    setIsCINValid: (isValid: boolean) => void;
-    actionLabel?: string;
-    onChangeCIN?: () => void;
+  IsCINValid: boolean;
+  setIsCINValid: (isValid: boolean) => void;
+  actionLabel?: string;
+  onChangeCIN?: () => void;
 }
 
-const CinForm = ({ IsCINValid, setIsCINValid, actionLabel = "Validate", onChangeCIN }: CinFormProps) => {
-    const genCaptcha = () => {
-        return Math.random().toString(36).substring(2, 10).toUpperCase();
+const CinForm = ({
+  IsCINValid,
+  setIsCINValid,
+  actionLabel = "Validate",
+  onChangeCIN,
+}: CinFormProps) => {
+  const genCaptcha = () => {
+    return Math.random().toString(36).substring(2, 10).toUpperCase();
+  };
+  const { t } = useTranslation();
+
+  const [cin, setCin] = useState("");
+  const [captcha, setCaptcha] = useState(genCaptcha());
+  const [enteredCaptcha, setEnteredCaptcha] = useState("");
+  const [captchaError, setCaptchaError] = useState<string>("");
+
+  // Reset form if CIN is changed
+  useEffect(() => {
+    if (!IsCINValid) {
+      setCin("");
+      setEnteredCaptcha("");
+      setCaptcha(genCaptcha());
+      setCaptchaError("");
     }
-    const {t} = useTranslation();
-    
+  }, [IsCINValid]);
 
-    const [cin, setCin] = useState("")
-    const [captcha, setCaptcha] = useState(genCaptcha())
-    const [enteredCaptcha, setEnteredCaptcha] = useState("")
-    const [captchaError, setCaptchaError] = useState<string>("")
+  const refreshCaptcha = () => {
+    const newCaptcha = genCaptcha();
+    setCaptcha(newCaptcha);
+  };
 
-    // Reset form if CIN is changed
-    useEffect(() => {
-        if (!IsCINValid) {
-            setCin("");
-            setEnteredCaptcha("");
-            setCaptcha(genCaptcha());
-            setCaptchaError("");
-        }
-    }, [IsCINValid]);
+  const isCaptchaValid = () => {
+    return enteredCaptcha === captcha;
+  };
 
-    const refreshCaptcha = () => {
-        const newCaptcha = genCaptcha();
-        setCaptcha(newCaptcha);
+  const handleValidate = (e?: React.FormEvent) => {
+    if (e) e.preventDefault();
+    if (actionLabel === "Change CIN" && onChangeCIN) {
+      onChangeCIN();
+      return;
     }
-
-    const isCaptchaValid = () => {
-        return enteredCaptcha === captcha;
+    if (isCaptchaValid()) {
+      setCaptchaError("");
+      setIsCINValid(true);
+    } else {
+      setCaptchaError("❌ Captcha does not match. Please try again.");
+      refreshCaptcha();
+      setEnteredCaptcha("");
     }
+  };
 
-    const handleValidate = (e?: React.FormEvent) => {
-        if (e) e.preventDefault();
-        if (actionLabel === "Change CIN" && onChangeCIN) {
-            onChangeCIN();
-            return;
-        }
-        if (isCaptchaValid()) {
-            setCaptchaError("");
-            setIsCINValid(true);
-        } else {
-            setCaptchaError("❌ Captcha does not match. Please try again.");
-            refreshCaptcha();
-            setEnteredCaptcha("");
-        }
+  const handleCaptchaInput = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setEnteredCaptcha(e.target.value);
+    if (e.target.value === captcha && captchaError) {
+      setCaptchaError("");
     }
+  };
 
-    const handleCaptchaInput = (e: React.ChangeEvent<HTMLInputElement>) => {
-        setEnteredCaptcha(e.target.value);
-        if (e.target.value === captcha && captchaError) {
-            setCaptchaError("");
-        }
-    };
+  return (
+    <>
+      <form
+        className="p-4 flex flex-col md:flex-row gap-4 items-start md:items-end flex-wrap"
+        onSubmit={handleValidate}
+      >
+        <InputField
+          label={t("RegBussOrg.CIN")}
+          placeholder="HGEUA9660T"
+          value={cin}
+          onChange={(e) => setCin(e.target.value)}
+          tooltip="Enter your 21-digit CIN"
+          readonly={IsCINValid}
+        />
+        <CaptchaBox captcha={captcha} />
+        <InputField
+          label={t("RegBussOrg.EnterCaptch")}
+          placeholder="HGEUA9660T"
+          value={enteredCaptcha}
+          onChange={handleCaptchaInput}
+          readonly={IsCINValid}
+        />
+        <Button label={t("Buttons.Validate")} onClick={handleValidate} />
+      </form>
+      {captchaError && (
+        <div className="text-red-500 text-sm px-4">{captchaError}</div>
+      )}
+    </>
+  );
+};
 
-    return (
-        <>
-            <form className="p-4 flex  flex-col md:flex-row gap-4 items-center " onSubmit={handleValidate}>
-                <InputField
-                    label={t("RegBussOrg.CIN")}
-                    placeholder="HGEUA9660T"
-                    value={cin}
-                    onChange={(e) => setCin(e.target.value)}
-                    tooltip="Enter your 21-digit CIN"
-                    readonly={IsCINValid}
-                />
-                <div className="w-full flex flex-row ml-16 gap-2">
-                <div>
-                    <label className="text-sm font-medium text-gray-700">{t("RegBussOrg.Captch")}</label>
-                    <CaptchaBox captcha={captcha} />
-                </div>
-
-                <InputField
-                    label={t("RegBussOrg.EnterCaptch")}
-                    placeholder="HGEUA9660T"
-                    value={enteredCaptcha}
-                    onChange={handleCaptchaInput}
-                    readonly={IsCINValid}
-                />
-                </div>
-                <Button label={t("Buttons.Validate")}onClick={handleValidate} />
-
-                
-            </form>
-            {captchaError && (
-                <div className="text-red-500 text-sm px-4">{captchaError}</div>
-            )}
-        </>
-    )
-}
-
-export default CinForm
+export default CinForm;
