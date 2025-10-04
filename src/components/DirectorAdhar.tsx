@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import { Edit } from "lucide-react";
 import { useTranslation } from "react-i18next";
 import Button from "../ui/Button";
 
